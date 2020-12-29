@@ -10,7 +10,13 @@ const EditUserForm = (props) => {
     }
 
     return (
-        <form>
+        <form
+            onSubmit={(event) => {
+                event.preventDefault()
+
+                props.updateUser(user.id, user)
+            }}
+        >
             <label>Name</label>
             <input
             type="text"
